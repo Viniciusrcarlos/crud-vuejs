@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Vinicius",
+      "email": "vinicius@gmail.com",
+      "phone": "51998383744"
+    },
+    {
+      "id": "2",
+      "name": "Vinicius",
+      "email": "vinicius@gmail.com",
+      "phone": "51998383744"
+    },
+    {
+      "id": "3",
+      "name": "Vinicius",
+      "email": "vinicius@gmail.com",
+      "phone": "51998383744"
+    },
+    {
+      "id": "4",
+      "name": "Vinicius",
+      "email": "vinicius@gmail.com",
+      "phone": "51998383744"
+    },
+    {
+      "id": "c397",
+      "name": "teste",
+      "email": "te",
+      "phone": ""
+    },
+    {
+      "id": "1e27",
+      "name": "vin",
+      "email": "321",
+      "phone": "321"
+    },
+    {
+      "id": "92c9",
+      "name": "3333",
+      "email": "333",
+      "phone": "333"
+    }
+  ]
+}
