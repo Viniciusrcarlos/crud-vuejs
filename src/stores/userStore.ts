@@ -20,16 +20,25 @@ export const useUserStore
         await api.post(`/users`, user)
     }
 
-    // const putUser = async (id: string) => {
-    //     const
-    //
-    // }
+    const updateUser = async (id: string, updatedUser: Partial<User>) => {
+        try {
+            const response = await api.put(`/users/${id}`, updatedUser);
+            const index = users.value.findIndex(user => user.id === id);
+            if (index !== -1) {
+                users.value[index] = { ...users.value[index], ...updatedUser };
+            }
+        } catch (error) {
+            console.error("Erro ao atualizar usuário:", error);
+        }
+    }
+
 
     return {
         users,
         fetchUsers,
         deleteUsers,
         createUsers,
+        updateUser,
     }
 
 })
