@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Header from './components/Header.vue'
-import { useUserStore } from "./stores/userStore.ts";
+import { useUserStore } from "./stores/userStore";
 import { onMounted, ref } from "vue";
-import type { User } from "./types/User.ts";
+import type { User } from "./types/User";
 
 
 const userStore = useUserStore();

@@ -20,7 +20,7 @@ export const useUserStore
         await api.post(`/users`, user)
     }
 
-    const updateUser = async (id: string, updatedUser: Partial<User>) => {
+    const updateUser = async (id: number, updatedUser: Partial<User>) => {
         try {
             const response = await api.put(`/users/${id}`, updatedUser);
             const index = users.value.findIndex(user => user.id === id);
