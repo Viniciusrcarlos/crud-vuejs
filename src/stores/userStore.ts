@@ -8,30 +8,47 @@ export const useUserStore
     const users = ref<User[]>([])
 
     const fetchUsers = async () => {
-        const response = await api.get("/users")
-        users.value = await response.data
-    }
+        try {
+            const response = await api.get("/users");
+            users.value = response.data;
+        } catch (error: any) {
+            console.error("Erro ao buscar usuarios:", error.response?.data || error.message);
+        }
+    };
 
     const deleteUsers = async (id: string) => {
-        await api.delete(`/users/${id}`)
-    }
-
+        try {
+            await api.delete(`/users/${id}`);
+        } catch (error: any) {
+            console.error("Erro ao deletar usuario:", error.response?.data || error.message);
+        }
+    };
+    
     const createUsers = async (user: User) => {
-        await api.post(`/users`, user)
-    }
+        try {
+            const response = await api.post(`/users`, user);
+            users.value.push(response.data);
+        } catch (error: any) {
+            console.error("Erro ao criar usuario:", error.response?.data || error.message);
+        }
+    };
 
     const updateUser = async (id: number, updatedUser: Partial<User>) => {
         try {
             const response = await api.put(`/users/${id}`, updatedUser);
-            const index = users.value.findIndex(user => user.id === id);
-            if (index !== -1) {
-                users.value[index] = { ...users.value[index], ...updatedUser };
+    
+            if (response.status === 200 || response.status === 204) {
+                const index = users.value.findIndex(user => user.id === id);
+                if (index !== -1) {
+                    users.value[index] = { ...users.value[index], ...updatedUser };
+                }
+            } else {
+                console.warn("Erro na atualização: Resposta inesperada da API", response);
             }
-        } catch (error) {
-            console.error("Erro ao atualizar usuário:", error);
+        } catch (error: any) {
+            console.error("Erro ao atualizar usuario:", error.response?.data || error.message);
         }
-    }
-
+    };
 
     return {
         users,

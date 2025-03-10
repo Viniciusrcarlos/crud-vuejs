@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": "98c7",
-      "name": "User001",
-      "email": "user@gmail.com",
-      "phone": "321321"
+      "name": "lauren Prusch",
+      "email": "laurenprusch@gmail.com",
+      "phone": "222",
+      "id": "0dQrMzr"
     },
     {
-      "name": "User003",
-      "email": "user002@hotmail.com",
-      "phone": "5189321893",
-      "id": "047d"
-    },
-    {
-      "name": "vinicius Raupp",
-      "email": "vinicius@gmail.com",
-      "phone": "321321321",
-      "id": "86ee"
+      "name": "Vicente Raupp",
+      "email": "vicente@gmail.com",
+      "phone": "321321",
+      "id": "3RrZVKb"
     }
   ]
 }
